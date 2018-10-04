@@ -1,0 +1,56 @@
+# Project information
+site_name:        'Jump Start Microcontrollers'
+site_description: 'A course through bottom up microcontroller development'
+site_author:      'Fabian Zahn'
+site_url:         'https://farrrb.github.io/jumpstart-microcontrollers/'
+
+# Repository
+repo_name: 'farrrb/jumpstart-microcontrollers'
+repo_url: 'https://github.com/farrrb/jumpstart-microcontrollers'
+
+# Copyright
+copyright: 'Copyright &copy; 2018 Fabian Zahn'
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  logo:
+    icon: 'code'
+  favicon: 'images/favicon.png'
+  palette:
+    primary: 'orange'
+    accent: 'orange'
+
+# Customization
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/farrrb'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: "#"
+      baselevel: 2
+
+# Navigation Tree
+nav:
+  - Welcome: index.md
+  - Introduction:
+    - Start: introduction/start.md
+    - README: introduction/readme.md
+    - Work In Progress: introduction/work_in_progress.md
+    - Motivation: introduction/motivation.md
+  - Prerequisites:
+    - Target - micro:bit: target/target_selection.md
+    - Compiler - (GCC for ARM): toolchain/toolchain_selection.md
+    - Build System - CMake: under_construction.md
+    - Debugger - OpenOCD: under_construction.md
+  - ARM Cortex-M0: under_construction.md
+  - Resources: resources.md
+  - Contributing: contributing.md
+  - License: license.md
