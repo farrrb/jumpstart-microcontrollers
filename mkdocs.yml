@@ -47,9 +47,9 @@ nav:
     - Motivation: introduction/motivation.md
   - Prerequisites:
     - Target - micro:bit: target/target_selection.md
-    - Compiler - (GCC for ARM): toolchain/toolchain_selection.md
+    - Compiler - GCC for ARM: toolchain/toolchain_selection.md
     - Build System - CMake: under_construction.md
-    - Debugger - OpenOCD: under_construction.md
+    - Debugger - GDB with OpenOCD: under_construction.md
   - ARM Cortex-M0: under_construction.md
   - Resources: resources.md
   - Contributing: contributing.md
