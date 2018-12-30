@@ -22,9 +22,14 @@ add_executable(${PROJECT_NAME}.elf
   src/startup/heap.c
   src/startup/startup.c
   src/application/main.c
-  src/application/delay.c
   src/application/display.c
 )
+
+# Add Libraries
+add_subdirectory(src/microhal)
+
+# Link Libraries (link against libgcc for software division)
+target_link_libraries(${PROJECT_NAME}.elf microhal gcc)
 
 # Post-Build Steps
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD COMMAND ${CMAKE_OBJCOPY} -O ihex ${OUTPUT_DIRECTORY}/${PROJECT_NAME}.elf ${OUTPUT_DIRECTORY}/${PROJECT_NAME}.hex)

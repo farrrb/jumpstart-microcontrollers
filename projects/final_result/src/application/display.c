@@ -1,12 +1,8 @@
 #include "display.h"
 
-#include "register.h"
 #include "delay.h"
-
-#define GPIOBASE        (0x50000000)
-#define REG_GPIO_OUTSET (GPIOBASE+0x508)
-#define REG_GPIO_OUTCLR (GPIOBASE+0x50C)
-#define REG_GPIO_DIRSET (GPIOBASE+0x518)
+#include "gpio.h"
+#include "register.h"
 
 #define ROW_TO_INDEX(row) ((row) >> (13+1))
 #define ROW1  (1 << 13)
@@ -46,8 +42,8 @@ uint32_t led_matrix[3] = {0};
 void display_init(void)
 {
   // Configure outputs
-  // set directions to output on all rows & collumns
-  register_write(REG_GPIO_DIRSET, (ROWS|COLS));
+  // set directions to output on all rows & columns
+  register_write(GPIO_REG_DIRSET, (ROWS|COLS));
 
   // clear screen
   display_clear();
@@ -65,34 +61,34 @@ void display_clear(void)
 
   // Set all rows low
   // Set all cols high
-  register_write(REG_GPIO_OUTCLR, ROWS);
-  register_write(REG_GPIO_OUTSET, COLS);
+  register_write(GPIO_REG_OUTCLR, ROWS);
+  register_write(GPIO_REG_OUTSET, COLS);
 }
 
 void display_update(uint32_t delay_ticks)
 {
   // ROW1
-  register_write(REG_GPIO_OUTCLR, ROWS);
-  register_write(REG_GPIO_OUTSET, COLS);
+  register_write(GPIO_REG_OUTCLR, ROWS);
+  register_write(GPIO_REG_OUTSET, COLS);
 
-  register_write(REG_GPIO_OUTCLR, led_matrix[0]);
-  register_write(REG_GPIO_OUTSET, ROW1);
+  register_write(GPIO_REG_OUTCLR, led_matrix[0]);
+  register_write(GPIO_REG_OUTSET, ROW1);
   delay(delay_ticks);
 
   // ROW2
-  register_write(REG_GPIO_OUTCLR, ROWS);
-  register_write(REG_GPIO_OUTSET, COLS);
+  register_write(GPIO_REG_OUTCLR, ROWS);
+  register_write(GPIO_REG_OUTSET, COLS);
 
-  register_write(REG_GPIO_OUTCLR, led_matrix[1]);
-  register_write(REG_GPIO_OUTSET, ROW2);
+  register_write(GPIO_REG_OUTCLR, led_matrix[1]);
+  register_write(GPIO_REG_OUTSET, ROW2);
   delay(delay_ticks);
 
   // ROW3
-  register_write(REG_GPIO_OUTCLR, ROWS);
-  register_write(REG_GPIO_OUTSET, COLS);
+  register_write(GPIO_REG_OUTCLR, ROWS);
+  register_write(GPIO_REG_OUTSET, COLS);
 
-  register_write(REG_GPIO_OUTCLR, led_matrix[2]);
-  register_write(REG_GPIO_OUTSET, ROW3);
+  register_write(GPIO_REG_OUTCLR, led_matrix[2]);
+  register_write(GPIO_REG_OUTSET, ROW3);
   delay(delay_ticks);
 }
 

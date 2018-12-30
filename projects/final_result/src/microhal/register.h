@@ -1,7 +1,7 @@
 ///< Register Access (read, write)
 
-#ifndef REGISTER_H
-#define REGISTER_H
+#ifndef REGISTER_H__
+#define REGISTER_H__
 
 #include <stdint.h>
 

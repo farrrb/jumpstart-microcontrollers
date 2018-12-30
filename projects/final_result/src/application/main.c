@@ -1,5 +1,8 @@
 #include <stdint.h>
 
+#include "delay.h"
+#include "timer.h"
+
 #include "display.h"
 
 #define BLINK_TICKS (16384)
@@ -10,6 +13,8 @@ const uint32_t const_data = 0xADDE; // -> .rodata (FLASH)
 uint32_t initialized_data = 0xFECA; // -> .data   (RAM)
 uint32_t uninitialized_data;        // -> COMMON  (RAM)
 uint32_t zero_data = 0;             // -> .bss    (RAM)
+
+uint32_t timer_value = 0;
 
 void draw_heart(void)
 {
@@ -34,6 +39,10 @@ int main(void)
 {
   uint32_t ctr = 0;
 
+  // initialize timer
+  timer_init(TIMER_CH_0);
+  timer_start(TIMER_CH_0);
+
   // initialize display
   display_init();
   draw_heart();
@@ -42,6 +51,7 @@ int main(void)
   {
     // update the display
     display_update(DELAY_TICKS);
+
 #if BLINK_TICKS > 0
     // blink
     ctr++;
@@ -49,13 +59,15 @@ int main(void)
     {
       display_clear();
     }
-    if (ctr > 2*BLINK_TICKS)
+    if (ctr > (2 * BLINK_TICKS))
     {
       draw_heart();
       ctr = 0;
     }
-
 #endif
+
+    timer_value = timer_ticks2microseconds(timer_capture(TIMER_CH_0));
+    timer_clear(TIMER_CH_0);
   }
 
   return 0;

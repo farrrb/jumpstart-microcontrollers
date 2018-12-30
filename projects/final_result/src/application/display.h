@@ -1,7 +1,7 @@
 ///< Display Abstraction
 
-#ifndef DISPLAY_H
-#define DISPLAY_H
+#ifndef DISPLAY_H__
+#define DISPLAY_H__
 
 #include <stdint.h>
 

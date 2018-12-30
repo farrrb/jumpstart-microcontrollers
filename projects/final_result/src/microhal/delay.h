@@ -1,7 +1,7 @@
 ///< Delay Function
 
-#ifndef DELAY_H
-#define DELAY_H
+#ifndef DELAY_H__
+#define DELAY_H__
 
 #include <stdint.h>
 
