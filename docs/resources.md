@@ -21,7 +21,26 @@
 - [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
 - [cmsis_gcc.h - Access to core registers](https://raw.githubusercontent.com/ARM-software/CMSIS/9fe411cef1cef5de58e5957b89760759de44e393/CMSIS/Include/cmsis_gcc.h)
 - [GCC Weak Function Attributes](http://www.valvers.com/programming/c/gcc-weak-function-attributes/)
+- [redhat: The GNUPro Toolkit](ftp://ftp.ges.redhat.com/private/releng/gnupro-docs/gnupro-latest.pdf)
 
 # OpenOCD
 - [OpenOCD](http://openocd.org/)
 - [OpenOCD Releases (Binaries)](https://github.com/gnu-mcu-eclipse/openocd/releases)
+
+# OSDev Resources
+- [OSDev: ARM Overview](https://wiki.osdev.org/ARM_Overview)
+- [OSDev: GCC Cross-Compiler](https://wiki.osdev.org/GCC_Cross-Compiler)
+- [OSDev: Creating a C Library](https://wiki.osdev.org/Creating_a_C_Library)
+
+# Unsorted
+- [Oracle: Initialization and Termination Routines](https://docs.oracle.com/cd/E23824_01/html/819-0690/chapter3-8.html)
+- [SCO: System V ABI](http://www.sco.com/developers/gabi/latest/ch4.sheader.html#special_sections)
+- [Mini FAQ about the misc libc/gcc crt files.](https://dev.gentoo.org/~vapier/crt.txt)
+- [Beginner's Guide to Linkers](https://www.lurklurk.org/linkers/linkers.html)
+
+# newlib
+- [OSDev: Porting Newlib](https://wiki.osdev.org/Porting_Newlib)
+- [Porting and Using Newlib in Embedded Systems](https://www.cs.ccu.edu.tw/~pahsiung/courses/esd/resources/newlib.pdf)
+- [Howto: Porting newlib](https://www.embecosm.com/appnotes/ean9/ean9-howto-newlib-1.0.html)
+- [Embedding with GNU: Newlib](https://www.embedded.com/design/prototyping-and-development/4024867/Embedding-with-GNU-Newlib)
+- [Embedding with GNU: Newlib Part 2](https://www.embedded.com/electronics-blogs/industry-comment/4023922/Embedding-GNU-Newlib-Part-2)
